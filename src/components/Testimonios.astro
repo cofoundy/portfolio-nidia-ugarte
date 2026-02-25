@@ -1,0 +1,83 @@
+---
+import { siteConfig } from "../config";
+---
+
+<section
+  id="testimonios"
+  class="py-20 sm:py-28 px-4 sm:px-8"
+  style={`background-color: var(--color-surface-light);`}
+>
+  <div class="max-w-4xl mx-auto">
+    <h2
+      class="reveal text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-center"
+      style={`color: var(--color-primary-dark);`}
+    >
+      Experiencias de Pacientes
+    </h2>
+    <p
+      class="reveal stagger-1 text-center text-base sm:text-lg mb-4 max-w-2xl mx-auto"
+      style={`color: var(--color-primary);`}
+    >
+      Lo que dicen quienes han vivido el proceso terap&eacute;utico.
+    </p>
+
+    <!-- Decorative center line -->
+    <div class="reveal stagger-1 flex justify-center mb-14">
+      <div class="bar-shimmer h-0.5 w-20 rounded-full" />
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {siteConfig.testimonios.map((testimonio, i) => (
+        <div
+          class={`reveal stagger-${i + 1} relative p-7 rounded-2xl border`}
+          style={`background-color: white; border-color: rgba(160,103,75,0.1);`}
+        >
+          <!-- Quote mark -->
+          <span
+            class="absolute -top-3 left-6 text-5xl font-serif leading-none select-none opacity-20"
+            style={`color: var(--color-accent);`}
+          >&ldquo;</span>
+
+          <p
+            class="text-sm sm:text-base leading-relaxed mt-4 mb-6 italic"
+            style={`color: var(--color-primary-dark);`}
+          >
+            {testimonio.text}
+          </p>
+
+          <div class="flex items-center gap-3">
+            <div
+              class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
+              style={`background: linear-gradient(135deg, var(--color-surface), var(--color-surface-light)); color: var(--color-accent);`}
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+              </svg>
+            </div>
+            <div>
+              <p
+                class="text-xs font-semibold"
+                style={`color: var(--color-primary-dark);`}
+              >
+                {testimonio.author}
+              </p>
+              <p
+                class="text-xs"
+                style={`color: var(--color-primary-light);`}
+              >
+                {testimonio.context}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <p
+      class="reveal stagger-4 text-center text-xs mt-8 italic"
+      style={`color: var(--color-primary-light);`}
+    >
+      * Testimonios compartidos con autorizaci&oacute;n. Identidades protegidas por confidencialidad profesional.
+    </p>
+  </div>
+</section>

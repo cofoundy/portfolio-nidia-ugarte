@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Nidia Ugarte Quispe",
   title: "Psicóloga Clínica · Arteterapeuta · Psicoterapeuta Gestalt",
   description:
-    "Portfolio profesional de Nidia Ugarte Quispe — Psicóloga Clínica, Arteterapeuta y Psicoterapeuta Gestalt con +7 años de experiencia en salud mental, arteterapia y trabajo comunitario.",
+    "Portfolio profesional de Nidia Ugarte Quispe — Psicóloga Clínica, Arteterapeuta y Psicoterapeuta Gestalt con +7 años de experiencia en salud mental, arteterapia y trabajo comunitario en Cusco, Arequipa y Madrid.",
 
   colors: {
     primaryDark: "#5C3A2E",
@@ -14,7 +14,7 @@ export const siteConfig = {
   },
 
   tagline:
-    "Donde el arte encuentra la sanación",
+    "Donde el arte y la psicoterapia encuentran la sanación",
 
   stats: [
     { value: "+7", label: "Años de experiencia" },
@@ -47,7 +47,7 @@ export const siteConfig = {
       icon: "book",
       title: "Terapia Narrativa",
       description:
-        "Re-escritura de historias personales para encontrar nuevos significados y superar experiencias difíciles.",
+        "Resignificar historias personales para encontrar nuevos significados y superar experiencias difíciles.",
     },
     {
       icon: "pen",
@@ -59,6 +59,15 @@ export const siteConfig = {
 
   trayectoria: {
     clinica: [
+      {
+        institution: "Consultorio Particular",
+        role: "Psicoterapeuta",
+        period: "2019 – Actualidad",
+        highlights: [
+          "Sesiones virtuales y presenciales de psicoterapia",
+          "Arteterapia individual y grupal",
+        ],
+      },
       {
         institution: "Hospital Santo Tomás",
         role: "Psicóloga Clínica",
@@ -221,6 +230,24 @@ export const siteConfig = {
     {
       title: "Embarazo No Deseado en Adolescentes de la Región Arequipa",
       registro: "",
+    },
+  ],
+
+  testimonios: [
+    {
+      text: "Gracias a las sesiones con Nidia pude reconectar con mis emociones a través del arte. Un espacio seguro y transformador.",
+      author: "Paciente anónimo",
+      context: "Arteterapia individual",
+    },
+    {
+      text: "La terapia narrativa me ayudó a resignificar mi historia y encontrar nuevas formas de ver mi vida.",
+      author: "Paciente anónimo",
+      context: "Terapia Narrativa",
+    },
+    {
+      text: "Un acompañamiento cálido y profesional. Nidia crea un espacio de confianza donde realmente te sientes escuchada.",
+      author: "Paciente anónimo",
+      context: "Psicoterapia Gestalt",
     },
   ],
 

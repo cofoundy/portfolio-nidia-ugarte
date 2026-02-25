@@ -1,0 +1,67 @@
+---
+import { siteConfig } from "../config";
+---
+
+<section
+  id="sobre-mi"
+  class="py-16 sm:py-24 px-4 sm:px-8"
+  style={`background-color: var(--color-surface);`}
+>
+  <div class="max-w-5xl mx-auto">
+    <h2
+      class="reveal text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-center"
+      style={`color: var(--color-primary-dark);`}
+    >
+      Donde el Arte Encuentra<br />
+      <span style={`color: var(--color-accent);`}>la Sanación</span>
+    </h2>
+
+    <!-- Quote -->
+    <div class="reveal stagger-1 quote-float text-center mb-12">
+      <blockquote
+        class="font-handwritten text-2xl sm:text-3xl italic max-w-3xl mx-auto leading-relaxed"
+        style={`color: var(--color-primary);`}
+      >
+        "{siteConfig.quote.text}"
+      </blockquote>
+    </div>
+
+    <div class="flex flex-col gap-10 md:flex-row md:gap-16">
+      <!-- Bio -->
+      <div class="reveal stagger-2 flex-1">
+        <p
+          class="text-base sm:text-lg leading-relaxed"
+          style={`color: var(--color-primary-dark);`}
+        >
+          {siteConfig.aboutMe}
+        </p>
+      </div>
+
+      <!-- Enfoques preview -->
+      <div class="reveal stagger-3 md:w-72 flex-shrink-0">
+        <h3
+          class="text-sm font-semibold uppercase tracking-widest mb-4"
+          style={`color: var(--color-accent);`}
+        >
+          Enfoques Terapéuticos
+        </h3>
+        <ul class="space-y-3">
+          {siteConfig.enfoques.map((enfoque) => (
+            <li class="flex items-center gap-3">
+              <span
+                class="w-2 h-2 rounded-full flex-shrink-0"
+                style={`background-color: var(--color-accent);`}
+              />
+              <span
+                class="text-sm font-medium"
+                style={`color: var(--color-primary-dark);`}
+              >
+                {enfoque.title}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

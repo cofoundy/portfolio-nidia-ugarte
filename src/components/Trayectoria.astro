@@ -1,0 +1,89 @@
+---
+import { siteConfig } from "../config";
+
+const categories = [
+  { key: "clinica" as const, label: "Clínica", icon: "🏥" },
+  { key: "educativa" as const, label: "Educativa", icon: "🎓" },
+  { key: "internacional" as const, label: "Internacional", icon: "🌍" },
+  { key: "consultoria" as const, label: "Consultoría", icon: "📋" },
+];
+---
+
+<section
+  id="trayectoria"
+  class="py-16 sm:py-24 px-4 sm:px-8"
+  style={`background-color: var(--color-surface);`}
+>
+  <div class="max-w-5xl mx-auto">
+    <h2
+      class="reveal text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-center"
+      style={`color: var(--color-primary-dark);`}
+    >
+      Camino Profesional
+    </h2>
+    <p
+      class="reveal stagger-1 text-center text-base sm:text-lg mb-14 max-w-2xl mx-auto"
+      style={`color: var(--color-primary);`}
+    >
+      Un recorrido de más de 7 años entre la clínica, la educación y la arteterapia — desde Arequipa hasta Madrid.
+    </p>
+
+    <div class="space-y-14">
+      {categories.map((cat, catIdx) => {
+        const items = siteConfig.trayectoria[cat.key];
+        if (!items || items.length === 0) return null;
+        return (
+          <div class={`reveal stagger-${catIdx + 1}`}>
+            {/* Category header */}
+            <div class="flex items-center gap-3 mb-6">
+              <span class="text-2xl">{cat.icon}</span>
+              <h3
+                class="text-xl sm:text-2xl font-bold uppercase tracking-wide"
+                style={`color: var(--color-accent);`}
+              >
+                {cat.label}
+              </h3>
+              <div
+                class="flex-1 h-px"
+                style={`background-color: var(--color-primary-light); opacity: 0.4;`}
+              />
+            </div>
+
+            {/* Timeline */}
+            <div class="timeline-brushstroke space-y-8 ml-2">
+              {items.map((item) => (
+                <div class="timeline-node">
+                  <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-3 mb-2">
+                    <h4
+                      class="text-lg font-bold"
+                      style={`color: var(--color-primary-dark);`}
+                    >
+                      {item.institution}
+                    </h4>
+                    <span
+                      class="text-sm"
+                      style={`color: var(--color-primary);`}
+                    >
+                      {item.role} · {item.period}
+                    </span>
+                  </div>
+                  <ul class="space-y-1">
+                    {item.highlights.map((h) => (
+                      <li class="flex items-start gap-2 text-sm sm:text-base" style={`color: var(--color-primary-dark);`}>
+                        <span
+                          class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0"
+                          style={`background-color: var(--color-primary-light);`}
+                        />
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>

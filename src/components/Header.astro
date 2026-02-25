@@ -1,0 +1,47 @@
+---
+import { siteConfig } from "../config";
+---
+
+<!-- Floating pill nav -->
+<header
+  id="floating-header"
+  class="fixed top-4 left-1/2 -translate-x-1/2 z-50 hidden"
+>
+  <nav
+    class="flex items-center gap-1 px-2 py-1.5 rounded-full border shadow-lg backdrop-blur-md sm:gap-3 sm:px-4 sm:py-2"
+    style={`background-color: rgba(251,247,243,0.92); border-color: var(--color-primary-light);`}
+  >
+    <span
+      class="font-bold text-sm tracking-wide hidden sm:inline"
+      style="font-family:'Cormorant Garamond',serif; color:var(--color-primary-dark);"
+    >
+      Nidia
+    </span>
+    <div class="flex items-center gap-1 text-xs sm:text-sm sm:gap-2">
+      <a href="#sobre-mi" class="px-2 py-1 rounded-full transition-colors hover:bg-[var(--color-surface)]" style="color:var(--color-primary);">Sobre Mí</a>
+      <a href="#enfoques" class="px-2 py-1 rounded-full transition-colors hover:bg-[var(--color-surface)]" style="color:var(--color-primary);">Enfoques</a>
+      <a href="#trayectoria" class="px-2 py-1 rounded-full transition-colors hover:bg-[var(--color-surface)]" style="color:var(--color-primary);">Trayectoria</a>
+      <a href="#contacto" class="px-2 py-1 rounded-full transition-colors hover:bg-[var(--color-surface)]" style="color:var(--color-primary);">Contacto</a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const header = document.getElementById("floating-header");
+  let lastScroll = 0;
+  const threshold = 400;
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.scrollY;
+    if (!header) return;
+
+    if (currentScroll > threshold) {
+      header.classList.remove("hidden");
+      header.classList.add("header-visible");
+    } else {
+      header.classList.add("hidden");
+      header.classList.remove("header-visible");
+    }
+    lastScroll = currentScroll;
+  });
+</script>

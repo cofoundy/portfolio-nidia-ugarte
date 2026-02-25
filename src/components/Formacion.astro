@@ -1,0 +1,82 @@
+---
+import { siteConfig } from "../config";
+---
+
+<section
+  id="formacion"
+  class="py-16 sm:py-24 px-4 sm:px-8"
+  style={`background-color: var(--color-surface-light);`}
+>
+  <div class="max-w-5xl mx-auto">
+    <h2
+      class="reveal text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-center"
+      style={`color: var(--color-primary-dark);`}
+    >
+      Raíces Académicas
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-10">
+      {siteConfig.formacion.map((item, i) => (
+        <div
+          class={`reveal stagger-${Math.min(i + 1, 6)} card-hover rounded-2xl p-6 border relative overflow-hidden`}
+          style={`background-color: white; border-color: var(--color-surface);`}
+        >
+          {item.international && (
+            <span
+              class="absolute top-3 right-3 text-xs font-semibold px-2.5 py-1 rounded-full text-white"
+              style={`background-color: var(--color-accent);`}
+            >
+              Internacional
+            </span>
+          )}
+          <div
+            class="text-2xl mb-3"
+            style={`color: var(--color-primary-light);`}
+          >
+            🎓
+          </div>
+          <h3
+            class="text-lg font-bold mb-1 pr-20"
+            style={`color: var(--color-primary-dark);`}
+          >
+            {item.degree}
+          </h3>
+          <p
+            class="text-sm mb-1"
+            style={`color: var(--color-primary);`}
+          >
+            {item.institution}
+          </p>
+          {item.period && (
+            <p
+              class="text-xs"
+              style={`color: var(--color-primary-light);`}
+            >
+              {item.period}
+            </p>
+          )}
+        </div>
+      ))}
+    </div>
+
+    {/* Certifications as chips */}
+    <div class="reveal">
+      <h3
+        class="text-sm font-semibold uppercase tracking-widest mb-4 text-center"
+        style={`color: var(--color-accent);`}
+      >
+        Certificaciones y Cursos
+      </h3>
+      <div class="flex flex-wrap justify-center gap-2">
+        {siteConfig.certificaciones.map((cert) => (
+          <span
+            class="text-xs sm:text-sm px-3 py-1.5 rounded-full border"
+            style={`color: var(--color-primary-dark); border-color: var(--color-primary-light); background-color: var(--color-surface);`}
+          >
+            {cert}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

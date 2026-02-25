@@ -1,0 +1,58 @@
+---
+import { siteConfig } from "../config";
+
+const iconMap: Record<string, string> = {
+  palette: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c1.1 0 2-.9 2-2 0-.53-.21-1.01-.55-1.36-.34-.36-.55-.84-.55-1.37 0-1.1.9-2 2-2h2.36c3.07 0 5.64-2.57 5.64-5.64C22.64 5.82 17.93 2 12 2zM6.5 13c-.83 0-1.5-.67-1.5-1.5S5.67 10 6.5 10s1.5.67 1.5 1.5S7.33 13 6.5 13zm3-4C8.67 9 8 8.33 8 7.5S8.67 6 9.5 6s1.5.67 1.5 1.5S10.33 9 9.5 9zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 6 14.5 6s1.5.67 1.5 1.5S15.33 9 14.5 9zm3 4c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>`,
+  heart: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>`,
+  book: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>`,
+  pen: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"/></svg>`,
+};
+---
+
+<section
+  id="enfoques"
+  class="py-16 sm:py-24 px-4 sm:px-8"
+  style={`background-color: var(--color-surface-light);`}
+>
+  <div class="max-w-5xl mx-auto">
+    <h2
+      class="reveal text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-center"
+      style={`color: var(--color-primary-dark);`}
+    >
+      Enfoques Terapéuticos
+    </h2>
+    <p
+      class="reveal stagger-1 text-center text-base sm:text-lg mb-12 max-w-2xl mx-auto"
+      style={`color: var(--color-primary);`}
+    >
+      Cada persona es única. Por eso integro diferentes enfoques para ofrecer un acompañamiento genuino y personalizado.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {siteConfig.enfoques.map((enfoque, i) => (
+        <div
+          class={`reveal stagger-${i + 1} card-hover p-6 sm:p-8 rounded-2xl border`}
+          style={`background-color: white; border-color: var(--color-surface);`}
+        >
+          <div
+            class="mb-4 icon-hover inline-block"
+            style={`color: var(--color-accent);`}
+            set:html={iconMap[enfoque.icon] || iconMap.heart}
+          />
+          <h3
+            class="text-xl sm:text-2xl font-bold mb-3"
+            style={`color: var(--color-primary-dark);`}
+          >
+            {enfoque.title}
+          </h3>
+          <p
+            class="text-sm sm:text-base leading-relaxed"
+            style={`color: var(--color-primary);`}
+          >
+            {enfoque.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

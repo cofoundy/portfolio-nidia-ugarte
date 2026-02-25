@@ -1,0 +1,114 @@
+---
+import { siteConfig } from "../config";
+---
+
+<section
+  id="investigacion"
+  class="py-16 sm:py-24 px-4 sm:px-8"
+  style={`background-color: var(--color-surface);`}
+>
+  <div class="max-w-4xl mx-auto">
+    <h2
+      class="reveal text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-center"
+      style={`color: var(--color-primary-dark);`}
+    >
+      Investigación
+    </h2>
+
+    {/* Main publication */}
+    <div
+      class="reveal stagger-1 card-hover rounded-2xl p-6 sm:p-8 border mb-8"
+      style={`background-color: white; border-color: var(--color-primary-light);`}
+    >
+      <div class="flex items-start gap-3 mb-4">
+        <span
+          class="text-xs font-semibold px-3 py-1 rounded-full text-white flex-shrink-0"
+          style={`background-color: var(--color-accent);`}
+        >
+          {siteConfig.publicacion.type}
+        </span>
+        <span
+          class="text-xs px-3 py-1 rounded-full border flex-shrink-0"
+          style={`color: var(--color-primary); border-color: var(--color-primary-light);`}
+        >
+          {siteConfig.publicacion.year}
+        </span>
+      </div>
+
+      <h3
+        class="text-xl sm:text-2xl font-bold mb-3 leading-snug"
+        style={`color: var(--color-primary-dark);`}
+      >
+        {siteConfig.publicacion.title}
+      </h3>
+
+      <p
+        class="text-sm sm:text-base mb-2"
+        style={`color: var(--color-primary);`}
+      >
+        {siteConfig.publicacion.institution}
+      </p>
+
+      <p
+        class="text-sm leading-relaxed mb-4"
+        style={`color: var(--color-primary-dark); opacity: 0.85;`}
+      >
+        {siteConfig.publicacion.description}
+      </p>
+
+      <a
+        href={siteConfig.publicacion.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 text-sm font-semibold btn-hover px-4 py-2 rounded-full text-white"
+        style={`background-color: var(--color-accent);`}
+      >
+        Ver en UCM
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </a>
+    </div>
+
+    {/* Dossiers */}
+    {siteConfig.dossiers.length > 0 && (
+      <div class="reveal stagger-2">
+        <h3
+          class="text-sm font-semibold uppercase tracking-widest mb-4"
+          style={`color: var(--color-accent);`}
+        >
+          Publicaciones
+        </h3>
+        <div class="space-y-3">
+          {siteConfig.dossiers.map((d) => (
+            <div
+              class="flex items-start gap-3 p-4 rounded-xl border"
+              style={`background-color: white; border-color: var(--color-surface);`}
+            >
+              <span
+                class="w-2 h-2 rounded-full mt-2 flex-shrink-0"
+                style={`background-color: var(--color-primary-light);`}
+              />
+              <div>
+                <p
+                  class="text-sm font-medium"
+                  style={`color: var(--color-primary-dark);`}
+                >
+                  {d.title}
+                </p>
+                {d.registro && (
+                  <p
+                    class="text-xs mt-1"
+                    style={`color: var(--color-primary);`}
+                  >
+                    {d.registro}
+                  </p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+</section>

@@ -4,31 +4,46 @@ import { siteConfig } from "../config";
 
 <section
   id="investigacion"
-  class="py-16 sm:py-24 px-4 sm:px-8"
+  class="relative py-20 sm:py-28 px-4 sm:px-8 overflow-hidden"
   style={`background-color: var(--color-surface);`}
 >
-  <div class="max-w-4xl mx-auto">
+  <!-- Decorative blob -->
+  <div class="absolute top-10 right-0 w-64 h-64 rounded-full opacity-[0.04] pointer-events-none"
+    style={`background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);`} />
+
+  <div class="max-w-4xl mx-auto relative">
     <h2
-      class="reveal text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-center"
+      class="reveal text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-center"
       style={`color: var(--color-primary-dark);`}
     >
-      Investigación
+      Investigaci&oacute;n
     </h2>
+
+    <!-- Decorative center line -->
+    <div class="reveal stagger-1 flex justify-center mb-14">
+      <div class="bar-shimmer h-0.5 w-20 rounded-full" />
+    </div>
 
     {/* Main publication */}
     <div
-      class="reveal stagger-1 card-hover rounded-2xl p-6 sm:p-8 border mb-8"
-      style={`background-color: white; border-color: var(--color-primary-light);`}
+      class="reveal stagger-1 group card-hover rounded-2xl p-7 sm:p-9 border relative overflow-hidden mb-10"
+      style={`background-color: white; border-color: rgba(160,103,75,0.15);`}
     >
-      <div class="flex items-start gap-3 mb-4">
+      {/* Gradient accent top */}
+      <div
+        class="absolute top-0 left-0 right-0 h-1 rounded-t-2xl"
+        style={`background: linear-gradient(90deg, var(--color-accent), var(--color-primary-light), var(--color-primary));`}
+      />
+
+      <div class="flex items-start gap-3 mb-5">
         <span
-          class="text-xs font-semibold px-3 py-1 rounded-full text-white flex-shrink-0"
-          style={`background-color: var(--color-accent);`}
+          class="text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full text-white shadow-sm"
+          style={`background: linear-gradient(135deg, var(--color-accent), var(--color-primary));`}
         >
           {siteConfig.publicacion.type}
         </span>
         <span
-          class="text-xs px-3 py-1 rounded-full border flex-shrink-0"
+          class="text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full border"
           style={`color: var(--color-primary); border-color: var(--color-primary-light);`}
         >
           {siteConfig.publicacion.year}
@@ -37,21 +52,21 @@ import { siteConfig } from "../config";
 
       <h3
         class="text-xl sm:text-2xl font-bold mb-3 leading-snug"
-        style={`color: var(--color-primary-dark);`}
+        style="font-family:'Cormorant Garamond',serif; color:var(--color-primary-dark);"
       >
         {siteConfig.publicacion.title}
       </h3>
 
       <p
-        class="text-sm sm:text-base mb-2"
+        class="text-sm sm:text-base mb-2 font-medium"
         style={`color: var(--color-primary);`}
       >
         {siteConfig.publicacion.institution}
       </p>
 
       <p
-        class="text-sm leading-relaxed mb-4"
-        style={`color: var(--color-primary-dark); opacity: 0.85;`}
+        class="text-sm leading-relaxed mb-6"
+        style={`color: var(--color-primary-dark); opacity: 0.8;`}
       >
         {siteConfig.publicacion.description}
       </p>
@@ -60,11 +75,11 @@ import { siteConfig } from "../config";
         href={siteConfig.publicacion.link}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 text-sm font-semibold btn-hover px-4 py-2 rounded-full text-white"
-        style={`background-color: var(--color-accent);`}
+        class="group/btn inline-flex items-center gap-2 text-sm font-semibold px-6 py-2.5 rounded-full text-white shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg"
+        style={`background: linear-gradient(135deg, var(--color-accent), var(--color-primary));`}
       >
         Ver en UCM
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
         </svg>
       </a>
@@ -74,7 +89,7 @@ import { siteConfig } from "../config";
     {siteConfig.dossiers.length > 0 && (
       <div class="reveal stagger-2">
         <h3
-          class="text-sm font-semibold uppercase tracking-widest mb-4"
+          class="text-xs font-semibold uppercase tracking-[0.2em] mb-5"
           style={`color: var(--color-accent);`}
         >
           Publicaciones
@@ -82,24 +97,28 @@ import { siteConfig } from "../config";
         <div class="space-y-3">
           {siteConfig.dossiers.map((d) => (
             <div
-              class="flex items-start gap-3 p-4 rounded-xl border"
-              style={`background-color: white; border-color: var(--color-surface);`}
+              class="flex items-start gap-4 p-5 rounded-xl border transition-all duration-300 hover:shadow-md"
+              style={`background-color: white; border-color: rgba(160,103,75,0.1);`}
             >
-              <span
-                class="w-2 h-2 rounded-full mt-2 flex-shrink-0"
-                style={`background-color: var(--color-primary-light);`}
-              />
+              <div
+                class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
+                style={`background: var(--color-surface); color: var(--color-primary-light);`}
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                </svg>
+              </div>
               <div>
                 <p
-                  class="text-sm font-medium"
+                  class="text-sm font-medium leading-snug"
                   style={`color: var(--color-primary-dark);`}
                 >
                   {d.title}
                 </p>
                 {d.registro && (
                   <p
-                    class="text-xs mt-1"
-                    style={`color: var(--color-primary);`}
+                    class="text-xs mt-1.5"
+                    style={`color: var(--color-primary-light);`}
                   >
                     {d.registro}
                   </p>

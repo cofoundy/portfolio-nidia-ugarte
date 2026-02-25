@@ -4,74 +4,92 @@ import { siteConfig } from "../config";
 
 <section
   id="formacion"
-  class="py-16 sm:py-24 px-4 sm:px-8"
+  class="py-20 sm:py-28 px-4 sm:px-8"
   style={`background-color: var(--color-surface-light);`}
 >
   <div class="max-w-5xl mx-auto">
     <h2
-      class="reveal text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-center"
+      class="reveal text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-center"
       style={`color: var(--color-primary-dark);`}
     >
-      Raíces Académicas
+      Ra&iacute;ces Acad&eacute;micas
     </h2>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-10">
+    <!-- Decorative center line -->
+    <div class="reveal stagger-1 flex justify-center mb-14">
+      <div class="bar-shimmer h-0.5 w-20 rounded-full" />
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-12">
       {siteConfig.formacion.map((item, i) => (
         <div
-          class={`reveal stagger-${Math.min(i + 1, 6)} card-hover rounded-2xl p-6 border relative overflow-hidden`}
-          style={`background-color: white; border-color: var(--color-surface);`}
+          class={`reveal stagger-${Math.min(i + 1, 6)} group card-hover rounded-2xl p-6 sm:p-7 border relative overflow-hidden`}
+          style={`background-color: white; border-color: rgba(160,103,75,0.1);`}
         >
+          {/* Subtle gradient bg on hover */}
+          <div
+            class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+            style={`background: linear-gradient(135deg, var(--color-surface) 0%, transparent 100%);`}
+          />
+
           {item.international && (
             <span
-              class="absolute top-3 right-3 text-xs font-semibold px-2.5 py-1 rounded-full text-white"
-              style={`background-color: var(--color-accent);`}
+              class="relative z-10 absolute top-4 right-4 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full text-white shadow-sm"
+              style={`background: linear-gradient(135deg, var(--color-accent), var(--color-primary));`}
             >
               Internacional
             </span>
           )}
-          <div
-            class="text-2xl mb-3"
-            style={`color: var(--color-primary-light);`}
-          >
-            🎓
-          </div>
-          <h3
-            class="text-lg font-bold mb-1 pr-20"
-            style={`color: var(--color-primary-dark);`}
-          >
-            {item.degree}
-          </h3>
-          <p
-            class="text-sm mb-1"
-            style={`color: var(--color-primary);`}
-          >
-            {item.institution}
-          </p>
-          {item.period && (
-            <p
-              class="text-xs"
-              style={`color: var(--color-primary-light);`}
+
+          <div class="relative z-10">
+            {/* Graduation icon */}
+            <div
+              class="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
+              style={`background: var(--color-surface); color: var(--color-primary-light);`}
             >
-              {item.period}
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+              </svg>
+            </div>
+
+            <h3
+              class={`text-lg font-bold mb-1.5 leading-snug ${item.international ? 'pr-24' : ''}`}
+              style={`color: var(--color-primary-dark);`}
+            >
+              {item.degree}
+            </h3>
+            <p
+              class="text-sm mb-1"
+              style={`color: var(--color-primary);`}
+            >
+              {item.institution}
             </p>
-          )}
+            {item.period && (
+              <p
+                class="text-xs font-medium"
+                style={`color: var(--color-primary-light);`}
+              >
+                {item.period}
+              </p>
+            )}
+          </div>
         </div>
       ))}
     </div>
 
-    {/* Certifications as chips */}
+    {/* Certifications */}
     <div class="reveal">
       <h3
-        class="text-sm font-semibold uppercase tracking-widest mb-4 text-center"
+        class="text-xs font-semibold uppercase tracking-[0.2em] mb-5 text-center"
         style={`color: var(--color-accent);`}
       >
         Certificaciones y Cursos
       </h3>
-      <div class="flex flex-wrap justify-center gap-2">
+      <div class="flex flex-wrap justify-center gap-2.5">
         {siteConfig.certificaciones.map((cert) => (
           <span
-            class="text-xs sm:text-sm px-3 py-1.5 rounded-full border"
-            style={`color: var(--color-primary-dark); border-color: var(--color-primary-light); background-color: var(--color-surface);`}
+            class="text-xs sm:text-sm px-4 py-2 rounded-full border transition-all duration-300 hover:scale-105 cursor-default"
+            style={`color: var(--color-primary-dark); border-color: rgba(160,103,75,0.2); background: linear-gradient(135deg, var(--color-surface), var(--color-surface-light));`}
           >
             {cert}
           </span>

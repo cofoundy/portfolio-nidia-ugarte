@@ -32,6 +32,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ═══════════════════════════════════════
+   SELECTION COLOR
+   ═══════════════════════════════════════ */
+
+::selection {
+  background-color: rgba(212, 118, 78, 0.2);
+  color: var(--color-primary-dark);
+}
+
+/* ═══════════════════════════════════════
    SCROLL REVEAL
    ═══════════════════════════════════════ */
 
@@ -96,16 +105,37 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes heroScaleIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+  from { opacity: 0; transform: scale(0.85) rotate(-2deg); }
+  to { opacity: 1; transform: scale(1) rotate(0deg); }
 }
 
-.hero-photo { animation: heroScaleIn 0.8s var(--ease-bounce) 0.2s both; }
-.hero-title { animation: heroFadeUp 0.6s var(--ease-out) 0.4s both; }
-.hero-subtitle { animation: heroFadeUp 0.6s var(--ease-out) 0.5s both; }
-.hero-tagline { animation: heroFadeUp 0.6s var(--ease-out) 0.6s both; }
-.hero-stats { animation: heroFadeUp 0.6s var(--ease-out) 0.7s both; }
-.hero-cta { animation: heroFadeUp 0.6s var(--ease-out) 0.8s both; }
+@keyframes blobFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(15px, -20px) scale(1.05); }
+  66% { transform: translate(-10px, 10px) scale(0.95); }
+}
+
+@keyframes blobFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-20px, 15px) scale(1.08); }
+  66% { transform: translate(15px, -10px) scale(0.92); }
+}
+
+@keyframes blobFloat3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(10px, -15px) scale(1.1); }
+}
+
+.hero-blob-1 { animation: blobFloat1 12s ease-in-out infinite; }
+.hero-blob-2 { animation: blobFloat2 15s ease-in-out infinite; }
+.hero-blob-3 { animation: blobFloat3 10s ease-in-out infinite; }
+
+.hero-photo { animation: heroScaleIn 1s var(--ease-bounce) 0.2s both; }
+.hero-title { animation: heroFadeUp 0.7s var(--ease-out) 0.4s both; }
+.hero-subtitle { animation: heroFadeUp 0.7s var(--ease-out) 0.55s both; }
+.hero-tagline { animation: heroFadeUp 0.7s var(--ease-out) 0.65s both; }
+.hero-stats { animation: heroFadeUp 0.7s var(--ease-out) 0.75s both; }
+.hero-cta { animation: heroFadeUp 0.7s var(--ease-out) 0.85s both; }
 
 /* ═══════════════════════════════════════
    WATERCOLOR WASH — Section separators
@@ -113,7 +143,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .watercolor-divider {
   position: relative;
-  height: 60px;
+  height: 80px;
   overflow: hidden;
 }
 
@@ -124,11 +154,25 @@ h1, h2, h3, h4, h5, h6 {
   left: -10%;
   width: 120%;
   height: 100%;
-  background: radial-gradient(ellipse at 20% 50%, var(--color-primary-light) 0%, transparent 60%),
-              radial-gradient(ellipse at 80% 50%, var(--color-accent) 0%, transparent 50%),
-              radial-gradient(ellipse at 50% 50%, var(--color-primary) 0%, transparent 70%);
-  opacity: 0.12;
-  filter: blur(20px);
+  background: radial-gradient(ellipse at 15% 50%, var(--color-primary-light) 0%, transparent 55%),
+              radial-gradient(ellipse at 85% 50%, var(--color-accent) 0%, transparent 45%),
+              radial-gradient(ellipse at 50% 50%, var(--color-primary) 0%, transparent 60%),
+              radial-gradient(ellipse at 35% 30%, var(--color-primary-light) 0%, transparent 40%);
+  opacity: 0.18;
+  filter: blur(25px);
+}
+
+.watercolor-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-primary-light);
+  opacity: 0.35;
 }
 
 /* ═══════════════════════════════════════
@@ -137,11 +181,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .card-hover {
   transition: transform var(--duration-normal) var(--ease-out),
-              box-shadow var(--duration-normal) var(--ease-out);
+              box-shadow var(--duration-normal) var(--ease-out),
+              border-color var(--duration-normal) var(--ease-out);
 }
 .card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px -12px rgba(92, 58, 46, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px -12px rgba(92, 58, 46, 0.15),
+              0 12px 24px -8px rgba(212, 118, 78, 0.08);
 }
 
 .btn-hover {
@@ -178,7 +224,8 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(
     to bottom,
     var(--color-primary-light) 0%,
-    var(--color-primary) 50%,
+    var(--color-primary) 30%,
+    var(--color-accent) 60%,
     var(--color-primary-light) 100%
   );
   border-radius: 2px;
@@ -197,9 +244,10 @@ h1, h2, h3, h4, h5, h6 {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background-color: var(--color-accent);
-  border: 3px solid var(--color-surface-light);
-  box-shadow: 0 0 0 2px var(--color-primary);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+  border: 3px solid var(--color-surface);
+  box-shadow: 0 0 0 2px var(--color-primary-light),
+              0 2px 8px rgba(92, 58, 46, 0.15);
   z-index: 1;
 }
 
@@ -220,9 +268,9 @@ h1, h2, h3, h4, h5, h6 {
 
 @keyframes quoteFloat {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
+  50% { transform: translateY(-6px); }
 }
-.quote-float { animation: quoteFloat 4s ease-in-out infinite; }
+.quote-float { animation: quoteFloat 5s ease-in-out infinite; }
 
 /* ═══════════════════════════════════════
    SHIMMER BAR
@@ -236,14 +284,14 @@ h1, h2, h3, h4, h5, h6 {
 .bar-shimmer {
   background: linear-gradient(
     90deg,
-    var(--color-primary-dark) 0%,
-    var(--color-primary) 25%,
+    var(--color-primary-light) 0%,
+    var(--color-accent) 25%,
     var(--color-primary-light) 50%,
-    var(--color-primary) 75%,
-    var(--color-primary-dark) 100%
+    var(--color-accent) 75%,
+    var(--color-primary-light) 100%
   );
   background-size: 200% 100%;
-  animation: shimmer 3s ease-in-out infinite;
+  animation: shimmer 4s ease-in-out infinite;
 }
 
 /* ═══════════════════════════════════════
@@ -258,4 +306,22 @@ html { scroll-behavior: smooth; }
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* ═══════════════════════════════════════
+   SCROLLBAR
+   ═══════════════════════════════════════ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface-light);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-light);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
 }

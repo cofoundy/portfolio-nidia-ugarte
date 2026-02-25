@@ -1,0 +1,199 @@
+% Harvard-Format Professional CV — Nidia Ugarte Quispe
+% Compile with: xelatex cv-ugarte.tex
+
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[margin=0.55in, top=0.45in, bottom=0.45in]{geometry}
+\usepackage{fontspec}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{tabularx}
+
+% --- Fonts (macOS system fonts — always available) ---
+\setmainfont{Times New Roman}
+\setsansfont{Helvetica Neue}
+
+% --- Colors (subtle, Harvard-appropriate) ---
+\definecolor{headrule}{HTML}{2c3e50}
+\definecolor{linkblue}{HTML}{1a5276}
+
+% --- Hyperlinks ---
+\hypersetup{colorlinks=true, urlcolor=linkblue, linkcolor=linkblue, pdfborder={0 0 0}}
+
+% --- Section Formatting (Harvard style: centered, bold, with rules) ---
+\renewcommand{\section}[1]{%
+  \vspace{0.5em}%
+  \noindent\hrulefill\quad{\normalsize\bfseries #1}\quad\hrulefill%
+  \vspace{0.2em}\par%
+}
+
+% --- List Formatting (tight bullets) ---
+\setlist[itemize]{nosep, left=0pt, label=\textbullet, itemsep=0pt, topsep=1pt}
+
+% --- No page numbers ---
+\pagestyle{empty}
+
+% --- Custom Commands ---
+\newcommand{\entry}[4]{%
+  \noindent\textbf{#1} \hfill #2 \par\nopagebreak
+  \textit{#3} \hfill \textit{#4} \par\nopagebreak
+}
+
+\newcommand{\entryshort}[3]{%
+  \noindent\textbf{#1}\enspace---\enspace\textit{#2} \hfill #3 \par
+}
+
+\begin{document}
+
+% ============================================
+% HEADER
+% ============================================
+\begin{center}
+  {\Large\bfseries Nidia Ugarte Quispe} \\[3pt]
+  Cusco / Arequipa, Per\'u
+  \quad$\cdot$\quad \href{mailto:nidiauq@gmail.com}{nidiauq@gmail.com}
+  \quad$\cdot$\quad +51 987 100 776
+  \\[2pt]
+  \href{https://nidia-ugarte.cofoundy.dev}{nidia-ugarte.cofoundy.dev}
+\end{center}
+
+\vspace{-0.5em}
+\noindent\rule{\textwidth}{0.8pt}
+\vspace{-0.6em}
+
+% ============================================
+% EDUCACI\'ON
+% ============================================
+\section{Educaci\'on}
+
+\entry{Universidad Complutense de Madrid / Universidad Aut\'onoma de Madrid}{Madrid, Espa\~na}{M\'aster en Arteterapia y Educaci\'on Art\'istica para la Inclusi\'on Social}{2023 -- 2025}
+\begin{itemize}
+  \item Investig\'o el impacto de la arteterapia grupal y experiencias culturales en la autonom\'ia e integraci\'on social de personas con problemas de salud mental
+  \item Public\'o tesis en el repositorio institucional Docta UCM
+\end{itemize}
+\vspace{0.2em}
+
+\entry{Universidad Cat\'olica Santa Mar\'ia}{Arequipa, Per\'u}{Licenciada en Psicolog\'ia}{}
+\vspace{0.2em}
+
+\entryshort{Centro Peruano de Psicoterapia Integral}{Psicoterapeuta Gestalt}{2019 -- 2020}
+\vspace{0.1em}
+\entryshort{Centro de Arteterapia y Gestalt en Per\'u}{Arteterapeuta}{2020 -- 2021}
+\vspace{0.1em}
+\entryshort{Centro Narrate Chile}{Diplomado Internacional en Terapia Narrativa}{2023 -- 2024}
+\vspace{0.1em}
+\entryshort{Casa Tonal\'a / Grupo Narrativa Coyoac\'an, M\'exico}{Diplomado en Pr\'acticas Narrativas --- Prevenci\'on de Violencia de G\'enero}{2022 -- 2023}
+\vspace{0.2em}
+
+% ============================================
+% EXPERIENCIA CL\'INICA
+% ============================================
+\section{Experiencia Cl\'inica}
+
+\entry{Consultorio Particular}{Cusco / Arequipa, Per\'u}{Psicoterapeuta}{2019 -- Presente}
+\begin{itemize}
+  \item Conduce sesiones virtuales y presenciales de psicoterapia individual y grupal, integrando enfoques Gestalt, narrativo y arteterapia
+  \item Atiende casos de ansiedad, depresi\'on, duelo, trauma y desarrollo personal con enfoque integrativo
+\end{itemize}
+\vspace{0.2em}
+
+\entry{Hospital Santo Tom\'as}{Cusco, Per\'u}{Psic\'ologa Cl\'inica}{2017 -- Presente}
+\begin{itemize}
+  \item Realiz\'o +440 talleres de arteterapia preventivo-promocionales en Salud Mental dirigidos a adolescentes, padres y docentes
+  \item Ejecut\'o evaluaciones psicol\'ogicas, consejer\'ia y psicoterapia individual y grupal
+  \item Dise\~n\'o sesiones de arteterapia como herramienta terap\'eutica complementaria
+\end{itemize}
+\vspace{0.2em}
+
+\entry{APAINE}{Arequipa, Per\'u}{Psic\'ologa Cl\'inica}{2018 -- 2019}
+\begin{itemize}
+  \item Lider\'o evaluaci\'on y seguimiento psicol\'ogico de personas con discapacidad
+  \item Orient\'o a familias sobre manejo integral de la discapacidad
+\end{itemize}
+\vspace{0.2em}
+
+\entry{Cl\'inica San Juan de Dios}{Arequipa, Per\'u}{Psic\'ologa Cl\'inica}{2017}
+\begin{itemize}
+  \item Dise\~n\'o talleres personalizados de intervenci\'on psicol\'ogica para ni\~nos y adolescentes
+\end{itemize}
+\vspace{0.2em}
+
+% ============================================
+% EXPERIENCIA EDUCATIVA Y COMUNITARIA
+% ============================================
+\section{Experiencia Educativa y Comunitaria}
+
+\entry{Colegio Rosa de Am\'erica (JEC)}{Cusco, Per\'u}{Psic\'ologa Educativa}{2018 -- 2021}
+\begin{itemize}
+  \item Implement\'o estrategias de convivencia democr\'atica y bienestar socioemocional para comunidad educativa
+  \item Brind\'o asistencia t\'ecnica a directivos y docentes en prevenci\'on de violencia escolar
+\end{itemize}
+\vspace{0.2em}
+
+\entry{Municipalidad Provincial de Chumbivilcas}{Cusco, Per\'u}{Psic\'ologa}{2020 -- 2022}
+\begin{itemize}
+  \item Facilit\'o 440 talleres de arteterapia preventivo-promocionales para adolescentes, padres y docentes
+  \item Promovi\'o la salud mental comunitaria a trav\'es de intervenciones art\'isticas y psicoeducativas
+\end{itemize}
+\vspace{0.2em}
+
+\entry{UGEL Chumbivilcas}{Cusco, Per\'u}{Psic\'ologa Educativa}{2020}
+\begin{itemize}
+  \item Capacit\'o a docentes en convivencia escolar y prevenci\'on de violencia
+\end{itemize}
+\vspace{0.2em}
+
+% ============================================
+% EXPERIENCIA INTERNACIONAL
+% ============================================
+\section{Experiencia Internacional}
+
+\entry{Hospital Gregorio Mara\~n\'on}{Madrid, Espa\~na}{Pr\'acticas de M\'aster --- Arteterapia}{2024 -- 2025}
+\begin{itemize}
+  \item Facilit\'o sesiones de arteterapia grupal con adolescentes en el \'area de psiquiatr\'ia
+\end{itemize}
+\vspace{0.2em}
+
+\entry{Asociaci\'on Psiquiatr\'ia y Vida}{Madrid, Espa\~na}{Pr\'acticas de M\'aster --- Arteterapia}{2024 -- 2025}
+\begin{itemize}
+  \item Dise\~n\'o e implement\'o talleres de arteterapia para usuarios del centro de salud mental
+\end{itemize}
+\vspace{0.2em}
+
+\entry{Fundaci\'on Menudos Corazones}{Madrid, Espa\~na}{Pr\'acticas de M\'aster --- Arteterapia}{2024 -- 2025}
+\begin{itemize}
+  \item Condujo sesiones de arteterapia a ni\~nos y adolescentes hospitalizados
+\end{itemize}
+\vspace{0.2em}
+
+% ============================================
+% PUBLICACIONES Y CONSULTOR\'IA
+% ============================================
+\section{Publicaciones y Consultor\'ia}
+
+\entry{Universidad Complutense de Madrid}{Madrid, Espa\~na}{Tesis de M\'aster}{2025}
+\begin{itemize}
+  \item ``Arteterapia grupal y experiencias culturales como facilitadoras de la autonom\'ia personal e integraci\'on social en personas con problemas de salud mental'' --- \href{https://docta.ucm.es/entities/publication/f8f38ab0-bd44-4866-9c1f-5aae3e11fe56}{Repositorio UCM}
+\end{itemize}
+\vspace{0.2em}
+
+\entry{FORDES Arequipa}{Arequipa, Per\'u}{Consultora}{2017}
+\begin{itemize}
+  \item Elabor\'o dossier ``Embarazo Precoz en Alto Selva Alegre'' (Dep\'osito Legal BNP N\textsuperscript{o} 2018-14954)
+  \item Elabor\'o dossier ``Embarazo No Deseado en Adolescentes de la Regi\'on Arequipa''
+\end{itemize}
+\vspace{0.2em}
+
+% ============================================
+% HABILIDADES Y CERTIFICACIONES
+% ============================================
+\section{Habilidades y Certificaciones}
+
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+\textbf{Enfoques:} & Arteterapia, Psicoterapia Gestalt, Terapia Narrativa, Cuentoterapia, Escritura Terap\'eutica \\
+\textbf{Certificaciones:} & Cuentoterapia AICUENT (2023--actual), Escritura Terap\'eutica (2022), Narraci\'on Autobiogr\'afica (2022), Herramientas de Narraci\'on Oral Niv. 1--3 (2021), Inteligencia Emocional MINEDU (2021) \\
+\textbf{Idiomas:} & Espa\~nol (nativo) \\
+\end{tabularx}
+
+\end{document}

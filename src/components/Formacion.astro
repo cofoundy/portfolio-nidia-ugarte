@@ -24,7 +24,7 @@ import { siteConfig } from "../config";
       {siteConfig.formacion.map((item, i) => (
         <div
           class={`reveal stagger-${Math.min(i + 1, 6)} group card-hover rounded-2xl p-6 sm:p-7 border relative overflow-hidden`}
-          style={`background-color: white; border-color: rgba(160,103,75,0.1);`}
+          style={`background-color: white; border-color: rgba(124,58,237,0.1);`}
         >
           {/* Subtle gradient bg on hover */}
           <div
@@ -91,7 +91,7 @@ import { siteConfig } from "../config";
         {siteConfig.certificaciones.map((cert) => (
           <span
             class="text-xs sm:text-sm px-4 py-2 rounded-full border transition-all duration-300 hover:scale-105 cursor-default"
-            style={`color: var(--color-primary-dark); border-color: rgba(160,103,75,0.2); background: linear-gradient(135deg, var(--color-surface), var(--color-surface-light));`}
+            style={`color: var(--color-primary-dark); border-color: rgba(124,58,237,0.2); background: linear-gradient(135deg, var(--color-surface), var(--color-surface-light));`}
           >
             {cert}
           </span>

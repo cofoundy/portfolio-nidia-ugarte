@@ -5,12 +5,12 @@ export const siteConfig = {
     "Portfolio profesional de Nidia Ugarte Quispe — Psicóloga Clínica, Arteterapeuta y Psicoterapeuta Gestalt con +7 años de experiencia en salud mental, arteterapia y trabajo comunitario en Cusco, Arequipa y Madrid.",
 
   colors: {
-    primaryDark: "#5C3A2E",
-    primary: "#A0674B",
-    primaryLight: "#C8946F",
-    accent: "#D4764E",
-    surface: "#F5EDE6",
-    surfaceLight: "#FBF7F3",
+    primaryDark: "#581C87",
+    primary: "#7C3AED",
+    primaryLight: "#A78BFA",
+    accent: "#0891B2",
+    surface: "#F3F0FF",
+    surfaceLight: "#FAF9FF",
   },
 
   tagline:

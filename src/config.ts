@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Nidia Ugarte Quispe",
-  title: "Psicóloga Clínica · Arteterapeuta · Psicoterapeuta Gestalt",
+  title: "Psicóloga Clínica · Psicoterapeuta · Arteterapeuta",
   description:
-    "Portfolio profesional de Nidia Ugarte Quispe — Psicóloga Clínica, Arteterapeuta y Psicoterapeuta Gestalt con +7 años de experiencia en salud mental, arteterapia y trabajo comunitario en Cusco, Arequipa y Madrid.",
+    "Portfolio profesional de Nidia Ugarte Quispe — Psicóloga Clínica, Psicoterapeuta y Arteterapeuta con +8 años de experiencia en salud mental, arteterapia y trabajo comunitario en Cusco, Arequipa y Madrid.",
 
   colors: {
     primaryDark: "#581C87",
@@ -14,10 +14,10 @@ export const siteConfig = {
   },
 
   tagline:
-    "Donde el arte y la psicoterapia encuentran la sanación",
+    "Procesos terapéuticos integrativos orientados a una transformación consciente y sostenida",
 
   stats: [
-    { value: "+7", label: "Años de experiencia" },
+    { value: "+8", label: "Años de experiencia" },
     { value: "440+", label: "Talleres realizados" },
     { value: "3", label: "Países de formación" },
   ],
@@ -32,28 +32,28 @@ export const siteConfig = {
 
   enfoques: [
     {
-      icon: "palette",
-      title: "Arteterapia",
-      description:
-        "Sesiones individuales y grupales que utilizan la expresión artística como herramienta terapéutica para la sanación emocional y el desarrollo personal.",
-    },
-    {
       icon: "heart",
       title: "Psicoterapia Gestalt",
       description:
         "Acompañamiento terapéutico centrado en el aquí y ahora, promoviendo la conciencia plena y la responsabilidad personal.",
     },
     {
+      icon: "palette",
+      title: "Arteterapia",
+      description:
+        "Sesiones individuales y grupales que utilizan la expresión artística como herramienta terapéutica para la sanación emocional y el desarrollo personal.",
+    },
+    {
       icon: "book",
       title: "Terapia Narrativa",
       description:
-        "Resignificar historias personales para encontrar nuevos significados y superar experiencias difíciles.",
+        "Resignificar historias personales para construir nuevos sentidos y superar experiencias difíciles.",
     },
     {
       icon: "pen",
-      title: "Cuentoterapia y Escritura Terapéutica",
+      title: "Escritura Terapéutica",
       description:
-        "El poder de las palabras como vehículo de transformación emocional, a través de cuentos y escritura creativa.",
+        "Espacio de exploración personal mediante la escritura, orientado a comprender vivencias, integrar emociones y favorecer el bienestar psicológico.",
     },
   ],
 
@@ -173,7 +173,7 @@ export const siteConfig = {
     {
       degree: "Licenciada en Psicología",
       institution: "Universidad Católica Santa María — Arequipa",
-      period: "",
+      period: "2012 – 2016",
       international: false,
     },
     {

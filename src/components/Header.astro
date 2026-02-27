@@ -2,22 +2,23 @@
 import { siteConfig } from "../config";
 ---
 
-<!-- Floating pill nav -->
+<!-- Floating pill nav — desktop -->
 <header
   id="floating-header"
   class="fixed top-4 left-1/2 -translate-x-1/2 z-50 hidden"
 >
+  <!-- Desktop nav (hidden on mobile) -->
   <nav
-    class="flex items-center gap-1 px-2 py-1.5 rounded-full border shadow-lg backdrop-blur-md sm:gap-3 sm:px-4 sm:py-2"
+    class="hidden sm:flex items-center gap-3 px-4 py-2 rounded-full border shadow-lg backdrop-blur-md"
     style={`background-color: rgba(251,247,243,0.92); border-color: var(--color-primary-light);`}
   >
     <span
-      class="font-bold text-sm tracking-wide hidden sm:inline"
+      class="font-bold text-sm tracking-wide"
       style="font-family:'Cormorant Garamond',serif; color:var(--color-primary-dark);"
     >
       Nidia
     </span>
-    <div class="flex items-center gap-1 text-xs sm:text-sm sm:gap-2">
+    <div class="flex items-center gap-2 text-sm">
       <a href="#sobre-mi" class="px-2 py-1 rounded-full transition-colors hover:bg-[var(--color-surface)]" style="color:var(--color-primary);">Sobre Mí</a>
       <a href="#enfoques" class="px-2 py-1 rounded-full transition-colors hover:bg-[var(--color-surface)]" style="color:var(--color-primary);">Enfoques</a>
       <a href="#trayectoria" class="px-2 py-1 rounded-full transition-colors hover:bg-[var(--color-surface)]" style="color:var(--color-primary);">Trayectoria</a>
@@ -25,13 +26,97 @@ import { siteConfig } from "../config";
       <a href="#contacto" class="px-2 py-1 rounded-full transition-colors hover:bg-[var(--color-surface)]" style="color:var(--color-primary);">Contacto</a>
     </div>
   </nav>
+
+  <!-- Mobile nav -->
+  <div class="sm:hidden relative">
+    <!-- Hamburger button -->
+    <button
+      id="mobile-menu-btn"
+      class="flex items-center gap-2 px-4 py-2.5 rounded-full border shadow-lg backdrop-blur-md transition-all duration-300"
+      style={`background-color: rgba(251,247,243,0.95); border-color: var(--color-primary-light);`}
+      aria-label="Abrir menú"
+      aria-expanded="false"
+    >
+      <span
+        class="font-bold text-sm tracking-wide"
+        style="font-family:'Cormorant Garamond',serif; color:var(--color-primary-dark);"
+      >
+        Nidia
+      </span>
+      <!-- Hamburger icon -->
+      <svg id="hamburger-icon" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--color-primary);">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <!-- Close icon -->
+      <svg id="close-icon" class="w-5 h-5 transition-transform duration-300 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--color-primary);">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <!-- Dropdown menu -->
+    <nav
+      id="mobile-menu"
+      class="absolute top-full right-0 mt-2 min-w-[180px] rounded-2xl border shadow-xl backdrop-blur-md overflow-hidden opacity-0 scale-95 pointer-events-none transition-all duration-200 origin-top-right"
+      style={`background-color: rgba(251,247,243,0.97); border-color: var(--color-primary-light);`}
+    >
+      <div class="flex flex-col py-2">
+        <a href="#sobre-mi" class="mobile-nav-link px-5 py-3 text-sm font-medium transition-colors hover:bg-[var(--color-surface)]" style="color:var(--color-primary);">Sobre Mí</a>
+        <a href="#enfoques" class="mobile-nav-link px-5 py-3 text-sm font-medium transition-colors hover:bg-[var(--color-surface)]" style="color:var(--color-primary);">Enfoques</a>
+        <a href="#trayectoria" class="mobile-nav-link px-5 py-3 text-sm font-medium transition-colors hover:bg-[var(--color-surface)]" style="color:var(--color-primary);">Trayectoria</a>
+        <a href="#testimonios" class="mobile-nav-link px-5 py-3 text-sm font-medium transition-colors hover:bg-[var(--color-surface)]" style="color:var(--color-primary);">Testimonios</a>
+        <a href="#contacto" class="mobile-nav-link px-5 py-3 text-sm font-medium transition-colors hover:bg-[var(--color-surface)]" style="color:var(--color-primary);">Contacto</a>
+      </div>
+    </nav>
+  </div>
 </header>
 
 <script>
   const header = document.getElementById("floating-header");
-  let lastScroll = 0;
+  const menuBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const hamburgerIcon = document.getElementById("hamburger-icon");
+  const closeIcon = document.getElementById("close-icon");
+  let menuOpen = false;
   const threshold = 400;
 
+  function toggleMenu() {
+    menuOpen = !menuOpen;
+    if (!mobileMenu || !hamburgerIcon || !closeIcon || !menuBtn) return;
+
+    if (menuOpen) {
+      mobileMenu.classList.remove("opacity-0", "scale-95", "pointer-events-none");
+      mobileMenu.classList.add("opacity-100", "scale-100", "pointer-events-auto");
+      hamburgerIcon.classList.add("hidden");
+      closeIcon.classList.remove("hidden");
+      menuBtn.setAttribute("aria-expanded", "true");
+    } else {
+      mobileMenu.classList.add("opacity-0", "scale-95", "pointer-events-none");
+      mobileMenu.classList.remove("opacity-100", "scale-100", "pointer-events-auto");
+      hamburgerIcon.classList.remove("hidden");
+      closeIcon.classList.add("hidden");
+      menuBtn.setAttribute("aria-expanded", "false");
+    }
+  }
+
+  function closeMenu() {
+    if (menuOpen) toggleMenu();
+  }
+
+  menuBtn?.addEventListener("click", toggleMenu);
+
+  // Close menu when clicking a link
+  document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (menuOpen && !menuBtn?.contains(e.target as Node) && !mobileMenu?.contains(e.target as Node)) {
+      closeMenu();
+    }
+  });
+
+  // Show/hide header on scroll
   window.addEventListener("scroll", () => {
     const currentScroll = window.scrollY;
     if (!header) return;
@@ -42,7 +127,7 @@ import { siteConfig } from "../config";
     } else {
       header.classList.add("hidden");
       header.classList.remove("header-visible");
+      closeMenu();
     }
-    lastScroll = currentScroll;
   });
 </script>

@@ -171,6 +171,12 @@ export const siteConfig = {
 
   formacion: [
     {
+      degree: "Entrenamiento Básico en Terapia EMDR",
+      institution: "EMDR Institute, Inc. · AIBAPT",
+      period: "2026",
+      international: true,
+    },
+    {
       degree: "Máster en Arteterapia y Educación Artística para la Inclusión Social",
       institution: "Universidad Complutense de Madrid / Universidad Autónoma de Madrid",
       period: "2023 – 2025",
@@ -210,7 +216,7 @@ export const siteConfig = {
 
   certificaciones: [
     "Entrenamiento Básico en Terapia EMDR — EMDR Institute, Inc. (2026)",
-    "Entrenamiento Básico en Terapia EMDR, 67 h — AIBAPT (2026)",
+    "Entrenamiento Básico en Terapia EMDR — AIBAPT (2026)",
     "Formación en Cuentoterapia — AICUENT (2023-actualidad)",
     "Escritura Terapéutica (2022)",
     "Narración Autobiográfica — Contar para Vivir (2022)",

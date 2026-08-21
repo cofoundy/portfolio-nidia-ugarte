@@ -203,6 +203,8 @@ export const siteConfig = {
   ],
 
   certificaciones: [
+    "Entrenamiento Básico en Terapia EMDR — EMDR Institute, Inc. (2026)",
+    "Entrenamiento Básico en Terapia EMDR, 67 h — AIBAPT (2026)",
     "Formación en Cuentoterapia — AICUENT (2023-actualidad)",
     "Escritura Terapéutica (2022)",
     "Narración Autobiográfica — Contar para Vivir (2022)",

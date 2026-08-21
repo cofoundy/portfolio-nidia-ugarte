@@ -219,16 +219,30 @@ export const siteConfig = {
     "Dinámicas Grupales de Alto Impacto — Psicoune (2015)",
   ],
 
-  publicacion: {
-    title:
-      "Arteterapia grupal y experiencias culturales como facilitadoras de la autonomía personal e integración social en personas con problemas de salud mental",
-    type: "Tesis de Máster",
-    institution: "Universidad Complutense de Madrid",
-    year: "2025",
-    link: "https://docta.ucm.es/entities/publication/f8f38ab0-bd44-4866-9c1f-5aae3e11fe56",
-    description:
-      "Estudio cualitativo que examina cómo la arteterapia grupal y las experiencias culturales fomentan la autonomía personal e integración social en personas con problemas de salud mental.",
-  },
+  // Lista: en el deploy de marzo había DOS publicaciones y el source solo
+  // conservaba la de máster. La de licenciatura se recuperó del HTML publicado.
+  publicaciones: [
+    {
+      title:
+        "Arteterapia grupal y experiencias culturales como facilitadoras de la autonomía personal e integración social en personas con problemas de salud mental",
+      type: "Tesis de Máster",
+      institution: "Universidad Complutense de Madrid",
+      year: "2025",
+      link: "https://docta.ucm.es/entities/publication/f8f38ab0-bd44-4866-9c1f-5aae3e11fe56",
+      description:
+        "Estudio cualitativo que examina cómo la arteterapia grupal y las experiencias culturales fomentan la autonomía personal e integración social en personas con problemas de salud mental.",
+    },
+    {
+      title:
+        "Doble Moral Sexual y Actitudes Favorables hacia la Violación Sexual en Estudiantes de Posgrado de dos Universidades",
+      type: "Tesis de Licenciatura",
+      institution: "Universidad Católica de Santa María",
+      year: "2017",
+      link: "https://alicia.concytec.gob.pe/vufind/index.php/Author/Home?author=Ugarte+Quispe%2C+Nidia",
+      description:
+        "Investigación sobre la correlación entre la doble moral sexual y las actitudes favorables hacia la violación en estudiantes de posgrado de áreas biomédicas, ingenierías, sociales y administrativas.",
+    },
+  ],
 
   dossiers: [
     {
@@ -243,19 +257,34 @@ export const siteConfig = {
 
   testimonios: [
     {
-      text: "Gracias a las sesiones con Nidia pude reconectar con mis emociones a través del arte. Un espacio seguro y transformador.",
-      author: "Paciente anónimo",
-      context: "Arteterapia individual",
+      text: "Estuve en un momento muy difícil de mi vida; todo se me cayó encima y no sabía cómo seguir adelante. No tenía fuerzas ni siquiera para arreglarme. Nidia me brindó la confianza que me hacía falta. Agradezco toda la paciencia que me tuvo; me sentí escuchada. Con cada sesión que tuve, aprendí a conocerme y valorarme, a conectar conmigo misma y, sobre todo, a levantarme y seguir adelante. Hoy agradezco mucho los consejos que me brindó en ese momento. Ahora soy mejor persona de lo que fui antes; volví a sonreír y con más intensidad.",
+      author: "Flor, 19 años",
+      context: "Psicoterapia",
     },
     {
-      text: "La terapia narrativa me ayudó a resignificar mi historia y encontrar nuevas formas de ver mi vida.",
-      author: "Paciente anónimo",
-      context: "Terapia Narrativa",
+      text: "Me siento agradecida por el acompañamiento en mi proceso de crecimiento personal. Gracias por las herramientas brindadas, la paciencia y el espacio de confianza que creaste. Sentí cercanía y calidez, lo que me permitió sentirme cómoda, abrirme con honestidad y lograr el progreso que necesitaba.",
+      author: "Nina",
+      context: "Psicoterapia",
     },
     {
-      text: "Un acompañamiento cálido y profesional. Nidia crea un espacio de confianza donde realmente te sientes escuchada.",
+      text: "Estar en terapia con Nidia es estar en un espacio seguro y profundamente humano. Cuando sales de cada sesión sientes que algo se acomodó por dentro. Integra el arte y herramientas creativas que te sacan de lo convencional; no es la típica consulta, es un proceso vivo donde exploras, sientes y descubres partes de ti con mucha contención y respeto.",
+      author: "Sara, 31 años",
+      context: "Arteterapia",
+    },
+    {
+      text: "Llegué a terapia después de una pérdida difícil, con la autoestima baja y sin rumbo. Gracias a la psicóloga, hoy entiendo que yo soy la prioridad. Logré sanar mis relaciones familiares y recuperé las ganas de vivir con una nueva perspectiva. Sin duda, ha sido el gran cambio que mi vida necesitaba.",
+      author: "Jeancarlo Abarca",
+      context: "Psicoterapia",
+    },
+    {
+      text: "El servicio de Nidia te brinda la confianza para poder emprender un camino guiado bajo su compañía, aún en momentos difíciles, lo que hace que el espacio de psicoterapia sea cálido, confortante, humano y sobre todo cercano.",
       author: "Paciente anónimo",
-      context: "Psicoterapia Gestalt",
+      context: "Psicoterapia",
+    },
+    {
+      text: "Estuve buscando un terapeuta que me diera confianza, un lugar seguro, pero a la vez capaz de sostener información relevante y con cierta autoridad a quien yo pudiese oír. Nidia fue todo eso y más: amable, con escucha activa, con información sólida y capacidad para liderar y guiar cada reunión. Estoy eternamente agradecida por su compromiso y gran apoyo en la evolución que ha tenido mi vida.",
+      author: "Paciente anónimo",
+      context: "Psicoterapia",
     },
   ],
 

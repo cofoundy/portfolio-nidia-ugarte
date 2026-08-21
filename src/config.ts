@@ -55,6 +55,12 @@ export const siteConfig = {
       description:
         "Espacio de exploración personal mediante la escritura, orientado a comprender vivencias, integrar emociones y favorecer el bienestar psicológico.",
     },
+    {
+      icon: "eye",
+      title: "Terapia EMDR",
+      description:
+        "Abordaje para el procesamiento de experiencias traumáticas mediante estimulación bilateral, orientado a reducir la carga emocional de los recuerdos difíciles.",
+    },
   ],
 
   trayectoria: {

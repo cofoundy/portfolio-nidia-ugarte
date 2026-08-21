@@ -59,7 +59,7 @@ export const siteConfig = {
       icon: "eye",
       title: "Terapia EMDR",
       description:
-        "Abordaje para el procesamiento de experiencias traumáticas mediante estimulación bilateral, orientado a reducir la carga emocional de los recuerdos difíciles.",
+        "Abordaje psicoterapéutico orientado al procesamiento y elaboración de experiencias traumáticas y recuerdos perturbadores mediante estimulación bilateral, favoreciendo su integración y un mayor bienestar emocional.",
     },
   ],
 

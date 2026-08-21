@@ -9,11 +9,14 @@ const iconMap: Record<string, string> = {
   pen: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"/></svg>`,
 };
 
+// Se indexa con módulo: si se agrega un enfoque más que gradientes, la barra
+// superior sigue apareciendo en vez de quedar `undefined` (pasó al sumar EMDR).
 const gradients = [
   "linear-gradient(135deg, #0891B2, #A78BFA)",
   "linear-gradient(135deg, #7C3AED, #A78BFA)",
   "linear-gradient(135deg, #A78BFA, #0891B2)",
   "linear-gradient(135deg, #581C87, #7C3AED)",
+  "linear-gradient(135deg, #0891B2, #7C3AED)",
 ];
 ---
 
@@ -50,7 +53,7 @@ const gradients = [
           <!-- Top gradient accent bar -->
           <div
             class="absolute top-0 left-0 right-0 h-1 rounded-t-2xl"
-            style={`background: ${gradients[i]};`}
+            style={`background: ${gradients[i % gradients.length]};`}
           />
 
           <!-- Icon with circle bg -->
